@@ -1,0 +1,26 @@
+package test
+
+
+class ProductController {
+
+    static responseFormats = ['json', 'xml']
+
+    def index(Integer max) {
+        println('I am here... list')
+        params.max = Math.min(max ?: 10, 100)
+        respond Product.list(params), model:[productCount: Product.count()]
+    }
+
+    def show(Product product) {
+        println('I am here... show')
+        if(product == null) {
+            render status:404
+        }
+        else {
+            respond product
+        }
+    }
+
+
+    
+}

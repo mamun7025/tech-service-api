@@ -1,0 +1,470 @@
+databaseChangeLog = {
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-1") {
+        createSequence(sequenceName: "hibernate_sequence")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-2") {
+        createTable(tableName: "auth_role") {
+            column(autoIncrement: "true", name: "id", type: "NUMBER(19, 0)") {
+                constraints(primaryKey: "true", primaryKeyName: "auth_rolePK")
+            }
+
+            column(name: "authority", type: "VARCHAR(255 CHAR)") {
+                constraints(nullable: "false")
+            }
+        }
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-3") {
+        createTable(tableName: "auth_user") {
+            column(autoIncrement: "true", name: "id", type: "NUMBER(19, 0)") {
+                constraints(primaryKey: "true", primaryKeyName: "auth_userPK")
+            }
+
+            column(name: "target_earning_per_month", type: "DOUBLE precision")
+
+            column(name: "first_name", type: "VARCHAR(15 CHAR)")
+
+            column(name: "password_expired", type: "NUMBER(1, 0)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "gender", type: "VARCHAR(6 CHAR)")
+
+            column(name: "full_address", type: "VARCHAR(500 CHAR)")
+
+            column(name: "account_expired", type: "NUMBER(1, 0)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "expertise_area", type: "VARCHAR(255 CHAR)")
+
+            column(name: "phone_number", type: "VARCHAR(15 CHAR)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "display_name", type: "VARCHAR(30 CHAR)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "expertise_keywords", type: "VARCHAR(255 CHAR)")
+
+            column(name: "username", type: "VARCHAR(64 CHAR)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "account_locked", type: "NUMBER(1, 0)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "city", type: "VARCHAR(50 CHAR)")
+
+            column(name: "password", type: "VARCHAR(255 CHAR)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "user_type", type: "VARCHAR(20 CHAR)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "birth_date", type: "timestamp")
+
+            column(name: "last_name", type: "VARCHAR(15 CHAR)")
+
+            column(name: "enabled", type: "NUMBER(1, 0)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "email", type: "VARCHAR(254 CHAR)")
+        }
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-4") {
+        createTable(tableName: "auth_user_role") {
+            column(name: "user_id", type: "NUMBER(19, 0)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "role_id", type: "NUMBER(19, 0)") {
+                constraints(nullable: "false")
+            }
+        }
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-5") {
+        createTable(tableName: "offer_promos") {
+            column(name: "ID", type: "NUMBER(19, 0)") {
+                constraints(nullable: "false")
+            }
+        }
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-6") {
+        createTable(tableName: "phone_auth_provider") {
+            column(name: "ID", type: "NUMBER(19, 0)") {
+                constraints(nullable: "false")
+            }
+        }
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-7") {
+        createTable(tableName: "product") {
+            column(name: "id", type: "NUMBER(19, 0)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "price", type: "DOUBLE precision") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "name", type: "VARCHAR(255 CHAR)") {
+                constraints(nullable: "false")
+            }
+        }
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-8") {
+        createTable(tableName: "service_center") {
+            column(name: "ID", type: "NUMBER(19, 0)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "CONTACT_PHONE_NUMBER", type: "VARCHAR(255 CHAR)")
+
+            column(name: "LAST_UPDATE_USER", type: "VARCHAR(255 CHAR)")
+
+            column(name: "NUMBER_OF_TECHNICIAN", type: "NUMBER(10, 0)")
+
+            column(name: "CODE", type: "VARCHAR(255 CHAR)")
+
+            column(name: "NAME", type: "VARCHAR(255 CHAR)")
+
+            column(name: "CONTACT_PERSON", type: "VARCHAR(255 CHAR)")
+
+            column(name: "ADDRESS_DETAILS", type: "VARCHAR(255 CHAR)")
+
+            column(name: "GEO_LOCATION_ADDRESS", type: "VARCHAR(255 CHAR)")
+
+            column(name: "CREATION_DATETIME", type: "timestamp")
+
+            column(name: "CREATION_USER", type: "VARCHAR(255 CHAR)")
+
+            column(name: "LAST_UPDATE_DATETIME", type: "timestamp")
+        }
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-9") {
+        createTable(tableName: "service_items") {
+            column(name: "ID", type: "NUMBER(19, 0)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "LAST_UPDATE_USER", type: "VARCHAR(255 CHAR)")
+
+            column(name: "ITEM_NAME", type: "VARCHAR(255 CHAR)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "ITEM_CODE", type: "VARCHAR(255 CHAR)")
+
+            column(name: "SERVICE_ICON_NAME", type: "VARCHAR(255 CHAR)")
+
+            column(name: "ACTIVE", type: "NUMBER(1, 0)")
+
+            column(name: "ITEM_DESCRIPTION", type: "VARCHAR(255 CHAR)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "SERVICE_ICON_PATH", type: "VARCHAR(255 CHAR)")
+
+            column(name: "CREATION_DATETIME", type: "timestamp")
+
+            column(name: "CREATION_USER", type: "VARCHAR(255 CHAR)")
+
+            column(name: "LAST_UPDATE_DATETIME", type: "timestamp")
+        }
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-10") {
+        createTable(tableName: "service_orders") {
+            column(name: "ID", type: "NUMBER(19, 0)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "SERVICE_ITEMS_NAME", type: "VARCHAR(255 CHAR)")
+
+            column(name: "CLIENT_USER_ID", type: "NUMBER(19, 0)")
+
+            column(name: "CLIENT_USER_NAME", type: "VARCHAR(255 CHAR)")
+
+            column(name: "SERVICE_ITEMS_CODE", type: "VARCHAR(255 CHAR)")
+
+            column(name: "SERVICE_ITEMS_ID", type: "NUMBER(19, 0)")
+
+            column(name: "LAST_UPDATE_USER", type: "VARCHAR(255 CHAR)")
+
+            column(name: "ISSUE_IMAGE_PATH", type: "VARCHAR(255 CHAR)")
+
+            column(name: "TECHNICIAN_USER_ID", type: "NUMBER(19, 0)")
+
+            column(name: "TECHNICIAN_USER_GEO_LOCATION", type: "VARCHAR(255 CHAR)")
+
+            column(name: "ORDER_PLACE_TIME", type: "timestamp")
+
+            column(name: "SERVICE_DETAILS_DESC", type: "VARCHAR(255 CHAR)")
+
+            column(name: "CLIENT_GEO_LOCATION", type: "VARCHAR(255 CHAR)")
+
+            column(name: "ORDER_CODE", type: "VARCHAR(255 CHAR)")
+
+            column(name: "status", type: "NUMBER(10, 0)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "CREATION_DATETIME", type: "timestamp")
+
+            column(name: "CREATION_USER", type: "VARCHAR(255 CHAR)")
+
+            column(name: "TECHNICIAN_USER_NAME", type: "VARCHAR(255 CHAR)")
+
+            column(name: "LAST_UPDATE_DATETIME", type: "timestamp")
+        }
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-11") {
+        createTable(tableName: "service_payment") {
+            column(name: "ID", type: "NUMBER(19, 0)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "LAST_UPDATE_USER", type: "VARCHAR(255 CHAR)")
+
+            column(name: "PAYMENT_METHOD", type: "VARCHAR(255 CHAR)")
+
+            column(name: "SERVICE_ORDERS_ID", type: "NUMBER(19, 0)")
+
+            column(name: "CREATION_DATETIME", type: "timestamp")
+
+            column(name: "CREATION_USER", type: "VARCHAR(255 CHAR)")
+
+            column(name: "PAYMENT_AMOUNT", type: "DOUBLE precision")
+
+            column(name: "SERVICE_ORDERS_CODE", type: "VARCHAR(255 CHAR)")
+
+            column(name: "LAST_UPDATE_DATETIME", type: "timestamp")
+        }
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-12") {
+        createTable(tableName: "user_feedbacks") {
+            column(name: "ID", type: "NUMBER(19, 0)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "LAST_UPDATE_USER", type: "VARCHAR(255 CHAR)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "COMMENT", type: "VARCHAR(255 CHAR)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "SERVICE_MAN_USER_ID", type: "NUMBER(19, 0)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "APP_RATING", type: "NUMBER(10, 0)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "CREATION_DATETIME", type: "timestamp") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "CREATION_USER", type: "VARCHAR(255 CHAR)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "CUSTOMER_USER_ID", type: "NUMBER(19, 0)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "LAST_UPDATE_DATETIME", type: "timestamp") {
+                constraints(nullable: "false")
+            }
+        }
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-13") {
+        createTable(tableName: "user_location") {
+            column(name: "ID", type: "NUMBER(19, 0)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "TIMESTAMP", type: "NUMBER(19, 0)")
+
+            column(name: "ALTITUDE_ACCURACY", type: "DOUBLE precision")
+
+            column(name: "LATITUDE", type: "DOUBLE precision")
+
+            column(name: "HEADING", type: "DOUBLE precision")
+
+            column(name: "ALTITUDE", type: "DOUBLE precision")
+
+            column(name: "SPEED", type: "DOUBLE precision")
+
+            column(name: "LAST_UPDATE_USER", type: "VARCHAR(255 CHAR)")
+
+            column(name: "LONGITUDE", type: "DOUBLE precision")
+
+            column(name: "ACCURACY", type: "DOUBLE precision")
+
+            column(name: "USER_ID", type: "NUMBER(19, 0)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "CREATION_DATETIME", type: "timestamp")
+
+            column(name: "CREATION_USER", type: "VARCHAR(255 CHAR)")
+
+            column(name: "LAST_UPDATE_DATETIME", type: "timestamp")
+        }
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-14") {
+        createTable(tableName: "user_location_history") {
+            column(name: "ID", type: "NUMBER(19, 0)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "TIMESTAMP", type: "NUMBER(19, 0)")
+
+            column(name: "ALTITUDE_ACCURACY", type: "DOUBLE precision")
+
+            column(name: "LATITUDE", type: "DOUBLE precision")
+
+            column(name: "HEADING", type: "DOUBLE precision")
+
+            column(name: "ALTITUDE", type: "DOUBLE precision")
+
+            column(name: "SPEED", type: "DOUBLE precision")
+
+            column(name: "LAST_UPDATE_USER", type: "VARCHAR(255 CHAR)")
+
+            column(name: "LONGITUDE", type: "DOUBLE precision")
+
+            column(name: "ACCURACY", type: "DOUBLE precision")
+
+            column(name: "USER_ID", type: "NUMBER(19, 0)") {
+                constraints(nullable: "false")
+            }
+
+            column(name: "CREATION_DATETIME", type: "timestamp")
+
+            column(name: "CREATION_USER", type: "VARCHAR(255 CHAR)")
+
+            column(name: "LAST_UPDATE_DATETIME", type: "timestamp")
+        }
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-15") {
+        addPrimaryKey(columnNames: "user_id, role_id", constraintName: "auth_user_rolePK", tableName: "auth_user_role")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-16") {
+        addPrimaryKey(columnNames: "ID", constraintName: "offer_promosPK", tableName: "offer_promos")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-17") {
+        addPrimaryKey(columnNames: "ID", constraintName: "phone_auth_providerPK", tableName: "phone_auth_provider")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-18") {
+        addPrimaryKey(columnNames: "id", constraintName: "productPK", tableName: "product")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-19") {
+        addPrimaryKey(columnNames: "ID", constraintName: "service_centerPK", tableName: "service_center")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-20") {
+        addPrimaryKey(columnNames: "ID", constraintName: "service_itemsPK", tableName: "service_items")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-21") {
+        addPrimaryKey(columnNames: "ID", constraintName: "service_ordersPK", tableName: "service_orders")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-22") {
+        addPrimaryKey(columnNames: "ID", constraintName: "service_paymentPK", tableName: "service_payment")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-23") {
+        addPrimaryKey(columnNames: "ID", constraintName: "user_feedbacksPK", tableName: "user_feedbacks")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-24") {
+        addPrimaryKey(columnNames: "ID", constraintName: "user_locationPK", tableName: "user_location")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-25") {
+        addPrimaryKey(columnNames: "ID", constraintName: "user_location_historyPK", tableName: "user_location_history")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-26") {
+        addUniqueConstraint(columnNames: "authority", constraintName: "UC_AUTH_ROLEAUTHORITY_COL", tableName: "auth_role")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-27") {
+        addUniqueConstraint(columnNames: "phone_number", constraintName: "UC_AUTH_USERPHONE_NUMBER_COL", tableName: "auth_user")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-28") {
+        addUniqueConstraint(columnNames: "username", constraintName: "UC_AUTH_USERUSERNAME_COL", tableName: "auth_user")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-29") {
+        addUniqueConstraint(columnNames: "USER_ID", constraintName: "UC_USER_LOCATIONUSER_ID_COL", tableName: "user_location")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-30") {
+        addForeignKeyConstraint(baseColumnNames: "role_id", baseTableName: "auth_user_role", constraintName: "FK3eldmba9luu9l0apl0791x8vd", deferrable: "false", initiallyDeferred: "false", referencedColumnNames: "id", referencedTableName: "auth_role")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-31") {
+        addForeignKeyConstraint(baseColumnNames: "SERVICE_ORDERS_ID", baseTableName: "service_payment", constraintName: "FK9mk11danw31qpo2yc28mqlp76", deferrable: "false", initiallyDeferred: "false", referencedColumnNames: "ID", referencedTableName: "service_orders")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-32") {
+        addForeignKeyConstraint(baseColumnNames: "SERVICE_MAN_USER_ID", baseTableName: "user_feedbacks", constraintName: "FKa1ufo9ca7xrn0o0mym8pt4c0s", deferrable: "false", initiallyDeferred: "false", referencedColumnNames: "id", referencedTableName: "auth_user")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-33") {
+        addForeignKeyConstraint(baseColumnNames: "user_id", baseTableName: "auth_user_role", constraintName: "FKebutsbqm58ehnlffb299ng0ap", deferrable: "false", initiallyDeferred: "false", referencedColumnNames: "id", referencedTableName: "auth_user")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-34") {
+        addForeignKeyConstraint(baseColumnNames: "CUSTOMER_USER_ID", baseTableName: "user_feedbacks", constraintName: "FKeilorcp3097wjk9ci93cpdana", deferrable: "false", initiallyDeferred: "false", referencedColumnNames: "id", referencedTableName: "auth_user")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-35") {
+        addForeignKeyConstraint(baseColumnNames: "CLIENT_USER_ID", baseTableName: "service_orders", constraintName: "FKhvj5qqvaivmo5ookhbx6haox3", deferrable: "false", initiallyDeferred: "false", referencedColumnNames: "id", referencedTableName: "auth_user")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-36") {
+        addForeignKeyConstraint(baseColumnNames: "USER_ID", baseTableName: "user_location_history", constraintName: "FKj4ivp469wjjfbe0tbs8aoikow", deferrable: "false", initiallyDeferred: "false", referencedColumnNames: "id", referencedTableName: "auth_user")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-37") {
+        addForeignKeyConstraint(baseColumnNames: "USER_ID", baseTableName: "user_location", constraintName: "FKj4kbkryi6s1r3o1s7bleruk1w", deferrable: "false", initiallyDeferred: "false", referencedColumnNames: "id", referencedTableName: "auth_user")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-38") {
+        addForeignKeyConstraint(baseColumnNames: "TECHNICIAN_USER_ID", baseTableName: "service_orders", constraintName: "FKk9bke3csj1r379k5laotplxad", deferrable: "false", initiallyDeferred: "false", referencedColumnNames: "id", referencedTableName: "auth_user")
+    }
+
+    changeSet(author: "Walton (generated)", id: "1589747535844-39") {
+        addForeignKeyConstraint(baseColumnNames: "SERVICE_ITEMS_ID", baseTableName: "service_orders", constraintName: "FKkljsw186yqht0p8rtuvoye0ss", deferrable: "false", initiallyDeferred: "false", referencedColumnNames: "ID", referencedTableName: "service_items")
+    }
+}
