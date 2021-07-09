@@ -30,7 +30,8 @@ class NotificationController extends RestfulController {
 
 
         // https://pub.dev/packages/firebase_messaging
-        String serverToken = "AAAA1XgEL_8:APA91bFTJGvdkO_E4y6uZKOVfkiU0U2r_YJKILrTUcP-gpU67T8kdZ4VP8U_m9nWyKwQUHd8XlTHOUsL00m13LeC-KJzmZTyKM3oR7sLstjWsQKdJFPSk80XldVKZ_Hul6VCNEoEMDPM"
+        // String serverToken = "AAAA1XgEL_8:APA91bFTJGvdkO_E4y6uZKOVfkiU0U2r_YJKILrTUcP-gpU67T8kdZ4VP8U_m9nWyKwQUHd8XlTHOUsL00m13LeC-KJzmZTyKM3oR7sLstjWsQKdJFPSk80XldVKZ_Hul6VCNEoEMDPM"
+        String serverToken = ""
 
         URL url = new URL("https://fcm.googleapis.com/fcm/send")
         URLConnection con = url.openConnection()
